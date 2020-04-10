@@ -5,33 +5,11 @@ import "./App.css";
 class App extends React.Component {
   render() {
     return (
-      <div style={{ height: "100vh", width: "100vw" }}>
+      <div style={{ height: "100vh", width: "100vw", maxWidth: 1200 }}>
         <Plot
+          style={{ width: "100%", height: "100%" }}
+          config={{ responsive: true }}
           data={[
-            // {
-            //   type: "scattergeo",
-            //   mode: "markers",
-            //   locations: ["DEU"],
-            //   hoverinfo: "text",
-            //   text: ["Heisenberg (15%)"],
-            //   marker: {
-            //     size: [30],
-            //     color: [15],
-            //     cmin: 0,
-            //     cmax: 15,
-            //     colorscale: "Greens",
-            //     reversescale: true,
-            //     colorbar: {
-            //       title: "Infection Rate",
-            //       ticksuffix: "%",
-            //       showticksuffix: "last",
-            //     },
-            //     line: {
-            //       color: "black",
-            //     },
-            //   },
-            //   name: "global sero data",
-            // },
             {
               type: "scattergeo",
               locationmode: "USA-states",
@@ -59,8 +37,6 @@ class App extends React.Component {
             },
           ]}
           layout={{
-            height: 600,
-            width: 1000,
             geo: {
               scope: "world",
               resolution: 15,
